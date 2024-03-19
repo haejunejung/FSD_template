@@ -1,0 +1,4 @@
+next.config.mjs
+tsconfig.json
+.prettierrc.json
+.eslintrc.json
