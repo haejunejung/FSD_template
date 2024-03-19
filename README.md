@@ -10,13 +10,13 @@ FSD란 무엇이며, 이 아키텍쳐 방법론이 해결되는 문제를 이야
 
 우선, 레이어(layer), 슬라이스(slice), 세그먼트(segment) 세 가지 개념을 알아봅시다.
 
-![alt text](image.png)
+![레이어, 슬라이스, 세그먼트](https://github.com/haejunejung/FSD_template/assets/99087502/af543c02-eaf8-4b69-9cb8-35607887b5c5)
 
 ## 레이어
 
 레이어는 최상위 디렉토리이자 애플리케이션 분해의 첫 번째 단계입니다. 현재 deprecated된 processes를 제외한 6개의 디렉토리로 구분되어 있습니다.
 
-![alt text](image-1.png)
+![디렉토리 구조](https://github.com/haejunejung/FSD_template/assets/99087502/f04754ab-31d1-4a82-84c5-98ea8869d45b)
 
 각 레이어에는 고유한 책임 영역이 있는데요. 이는 *비즈니스 지향적*입니다. 각 레이어를 개별적으로 살펴보겠습니다.
 
@@ -34,11 +34,11 @@ FSD란 무엇이며, 이 아키텍쳐 방법론이 해결되는 문제를 이야
 
 이러한 레이어들은 코드베이스를 조직화하고, 모듈화되고 유지보수 용이한 확장 가능한 아키텍쳐를 촉진하는데 도움이 됩니다.
 
-![alt text](image-2.png)
+![아키텍쳐](https://github.com/haejunejung/FSD_template/assets/99087502/5da6d592-749c-4722-9de1-ac5298dc4396)
 
 기능 분할 설계의 주요 특징 중 하나는 계층 구조입니다. 이 구조에서 features 레이어가 entities 레이어보다 더 위에 있기 때문에 entities 레이어는 features 레이어의 기능을 사용할 수 없습니다. 마찬가지로 features 레이어는 widgets 레이어의 컴포넌트를 사용할 수 없으며, 위 레이어는 아래 레이어만 활용할 수 있습니다. 이는 한 방향으로만 향하는 선형적인 흐름을 유지하기 위함입니다.
 
-![alt text](image-3.png)
+![아키텍쳐](https://github.com/haejunejung/FSD_template/assets/99087502/32f9742f-846c-48f5-aea2-66c6eb4bb1f7)
 
 계층 구조에서 레이어의 위치가 낮을수록 더 많은 곳에서 사용될 가능성이 높기 때문에, 레이어를 변경하는 것이 더 위험합니다. 예를 들어 shared 레이어의 UI키트는 features, widgets, 심지어 pages 레이어에서도 사용됩니다.
 
@@ -72,7 +72,7 @@ FSD란 무엇이며, 이 아키텍쳐 방법론이 해결되는 문제를 이야
 
 공개 API는 import 및 export로 단순하게 작동하므로 애플리케이션을 변경할 때 코드의 모든 곳에서 import를 변경할 필요가 없습니다.
 
-![alt text](image-4.png)
+![공개 API](https://github.com/haejunejung/FSD_template/assets/99087502/b645baf6-e033-4f4a-94da-153313aacda6)
 
 ## 아키텍쳐에 대해 더 자세히 알아보기
 
@@ -80,7 +80,7 @@ FSD란 무엇이며, 이 아키텍쳐 방법론이 해결되는 문제를 이야
 
 계층이 높은 레이어일수록 특정 비즈니스 노드에 더 많이 종속되고, 더 많은 비즈니스 로직이 포함됩니다. 계층이 낮은 레이어일수록 추상화 수준이 높고 재사용성이 높으며 레이어 자체의 자율성이 적습니다.
 
-![alt text](image-5.png)
+![추상화 및 비즈니스 로직](https://github.com/haejunejung/FSD_template/assets/99087502/fe297ce9-0419-4337-ac9f-8fd87a06dcf6)
 
 ### FSD가 문제를 해결하는 방식
 
@@ -97,7 +97,7 @@ OOP에서는 다형성(polymorphism), 캡슐화(encapsulation), 상속(inheritan
 ### 고전적 아키텍쳐와 비교
 
 고전적인 아키텍쳐에서의 명확한 표준와 기준이 없지만, 일반적으로 다음과 같은 형식을 볼 수 있습니다.
-![alt text](image-6.png)
+![고전적인 아키텍쳐](https://github.com/haejunejung/FSD_template/assets/99087502/0dcb0069-d3b1-48c2-96a0-1bfe7b10c865)
 
 고전적인 아키텍쳐에는 눈에 띄는 단점이 존재합니다. 가장 큰 단점은 컴포넌트 간의 암묵적인 연결과 모듈의 복잡성 때문에 프로젝트가 유지보수하기 어려워진다는 것입니다. 고전적인 아키텍쳐의 단점은 시간이 흐를수록 더욱 분명해집니다. 프로젝트가 진화할수록 애플리케이션 아키텍쳐는 엉망진창이 되어 버립니다.
 
